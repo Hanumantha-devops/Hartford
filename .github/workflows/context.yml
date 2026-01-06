@@ -2,7 +2,7 @@ name: context workflow
 on: push
 jobs: 
   context-demo:
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     steps:
       - name: use context variable
         run: |
