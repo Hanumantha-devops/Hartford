@@ -1,10 +1,12 @@
-name: Composite java action
+name: github actions demo
 on:
   push:
     branches: ["master"]
 jobs:
-  build:
+  action-demo:
     runs-on: ubuntu-latest  
     steps:
-      - name: Build step
-        run: echo "Hello, ${{ secrets.DOCKER_PASSWORD }}"
+      - name: checkout the code
+        uses: actions/checkout@v6 
+      - name: print index.html page
+        run: cat index.html
