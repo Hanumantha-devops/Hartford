@@ -1,0 +1,17 @@
+name: output-demo
+on: 
+  push:
+    branches:
+      - main
+      - release
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build step if on main
+        if: github.ref == 'refs/heads/main'
+        run: echo "run on main branch only"
+      
+      - name: build with normal
+        run: echo "Building version 1.0.0"
