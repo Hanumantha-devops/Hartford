@@ -1,8 +1,8 @@
-name: output-demo
+name: if condition demo
 on: 
   push:
     branches:
-      - master
+      - main
       - release
 
 jobs: 
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build step if on main
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run: echo "run on main branch only"
       
       - name: build with normal
