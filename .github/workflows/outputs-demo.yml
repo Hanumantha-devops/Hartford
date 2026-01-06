@@ -2,10 +2,9 @@ name: output-demo
 on: push
 jobs: 
   build:
-    output:
-    artifacts: ${{ steps.step1.outputs.version }}
-    
     runs-on: ubuntu-latest
+    outputs:
+      artifacts: ${{ steps.step1.outputs.version }}
     steps:
       - name: build step
         id: step1
@@ -16,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy step
-        run: echo "Deploying version ${{ needs.build.outputs.artifacts }}"      
+        run: echo "Deploying version ${{ needs.build.outputs.artifacts }}"
