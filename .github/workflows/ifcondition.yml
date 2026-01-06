@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build step if on main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         run: echo "run on main branch only"
       
       - name: build with normal
