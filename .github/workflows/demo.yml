@@ -1,0 +1,23 @@
+name: Input demo
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: choose the env
+        required: true
+        type: choice
+        options:
+          - dev
+          - qa
+          - test
+          - prod
+      workflow_name:
+        description: provide workflow name without xml
+jobs:
+    input-demo:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Show inputs
+          run: |
+            echo "Environment: ${{ github.event.inputs.environment }}"
+            echo "Workflow Name: ${{ github.event.inputs.workflow_name }}"
