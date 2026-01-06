@@ -1,0 +1,10 @@
+name: or condition example
+on: push
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build step with or condition like hanu or Hanumantha-devops
+        if: github.actor == 'hanu' || github.actor == 'Hanumantha-devops'
+        run: echo "Building for hanu or Hanumantha-devops"
+      
