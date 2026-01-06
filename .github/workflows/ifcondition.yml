@@ -2,7 +2,7 @@ name: output-demo
 on: 
   push:
     branches:
-      - main
+      - maaster
       - release
 
 jobs: 
