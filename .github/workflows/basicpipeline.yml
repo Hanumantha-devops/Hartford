@@ -8,5 +8,9 @@ jobs:
     steps:
       - name: checkout the code
         uses: actions/checkout@v6 
-      - name: print index.html page
-        run: cat index.html
+      - name: configure aws details
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
